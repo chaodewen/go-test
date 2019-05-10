@@ -1,12 +1,12 @@
 package string
 
 import (
-	"code.byted.org/gopkg/logs"
-	"io/ioutil"
 	"regexp"
 	"strconv"
 	"strings"
 	"testing"
+
+	"io/ioutil"
 )
 
 func TestStrconv(t *testing.T) {
@@ -16,8 +16,6 @@ func TestStrconv(t *testing.T) {
 }
 
 func TestLen(t *testing.T) {
-	defer logs.Flush()
-
 	str := "中文long"
 
 	t.Logf("Len: %d\n", len(str))
@@ -32,7 +30,6 @@ func TestLen(t *testing.T) {
 }
 
 func TestReg(t *testing.T) {
-	defer logs.Flush()
 	regStr := `^<p>([\s\S]*)</p><p>{!-- PGC_VIDEO:[\s\S]*}</p>$`
 	str := `<p>【鸠占鹊巢】杜鹃鸟从不自己筑巢抚养雏鸟，但它会把自己的蛋产在别的鸟类的巢里，而且杜鹃的雏一般会比别的鸟类早出生，只要一出生它就把其它的鸟蛋推出鸟巢，十足的鸟中恶霸，看的好气哦[怒]</p><p>{!-- PGC_VIDEO:{"thumb_fingerprint":18269474652372929611,"status":0,"thumb_height":360,"thumb_neardup_id":-1349770063676836373,"thumb_width":640,"vid":"v02069740000bdgoi1qr863ssflodvh0","video_md5":"dbe5016610d3c53f6ee7e15914953420","vu":"v02069740000bdgoi1qr863ssflodvh0","sp":"toutiao","vposter":"http://p2.pstatp.com/large/tos-cn-p-0000/bf30c334d4584d2981216c47395a83d3","video_size":{"normal":{"duration":128.04,"h":360,"subjective_score":0,"w":640,"file_size":6174699}},"duration":128,"hash_id":15845072401853564223,"thumb_url":"9f2e0011d150dfed09db","vname":"","md5":"a19afc1a169e2a99d826362a43f30b4a","neardup_id":16073692298383630279} --}</p>`
 
@@ -43,15 +40,12 @@ func TestReg(t *testing.T) {
 }
 
 func TestSplit(t *testing.T) {
-	defer logs.Flush()
-
 	str := "0123456"
 
 	t.Logf("str: %+v", str[7:])
 }
 
 func TestReplace(t *testing.T) {
-	defer logs.Flush()
 	str := `uid
 5737710570
 60067059491
